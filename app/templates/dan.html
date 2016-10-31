@@ -1,0 +1,44 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+<div class="content">
+<h1>请假表</h1>
+<p>请根据提示正确填写下面内容:</p>
+<form action="" style="align:left"  method="post" name="lv">
+		<input id="csrf_token" name="csrf_token" type="hidden" value="1476856739##caacb24ae3443a3c60aba348c08d1435d0cedccb">
+		<p>
+			员工姓名:
+			{{ form.name }}<br>
+			<br>
+		</p>
+		<p>
+			所属部门:
+			{{ form.department }}<br>
+			<br>
+		</p>
+		</p>
+			工作岗位:
+			{{ form.job }}<br>
+			<br>
+		</p>
+		</p class="content">
+			请假时间:
+			从{{ form.time1 }}<br>
+			到{{ form.time2 }}
+			<br>
+		
+		</p>
+			请假类型
+			{{ form.genre }}	
+		<p>
+			请假事由:
+			{{ form.reason }}<br>
+			<br>
+		</p>	
+		<p>
+			<input class="pure-button" type="submit" value="确认">
+		</p>
+</form>
+</div>
+{% endblock %}

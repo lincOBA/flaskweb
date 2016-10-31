@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block index %}
+	{% for post in posts %}
+	<div class="pure-u-1-2">
+	<p>
+		{{ post.author.nickname }} 你现在所在的地方是 上海 ，你周围的出租房源可以在下面查找。信息来源:
+		<b>
+			{{ post.body }}
+		</b>
+	</p>
+	{% endfor %}
+	<iframe frameborder="0" width="1200" height="400" src="http://127.0.0.1:9999/rent"></iframe> 
+	</div>
+	<div class="pure-u-1-2" style="position:fix;bottom:0" style="background-color:rgb(211,211,211)">
+		<textarea rows="5" cols="70" style="">{% for msg in msgs %}{{ msg.time }}----{{ msg.name }}:
+	{{ msg.msg }}
+{% endfor %}
+		</textarea>
+	
+		<form action="" method="post" name="liuyan">
+			<input name="name" size="4" type="text" value="{{ nickname }}" disabled="true"　readOnly="true">	
+			<input id="message" size="10" name="message" type="text">
+			<input class="pure-button" type="submit" value="留言">
+			
+		</form>
+	</div>
+
+{% endblock %}

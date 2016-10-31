@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+	<h1>用户列表</h1>
+{% for user in users %}
+	<p>第{{ user.id }}个用户：{{ user.nickname }}</p>
+{% endfor %}
+{% endblock %}

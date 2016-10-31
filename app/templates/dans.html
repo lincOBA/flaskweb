@@ -1,0 +1,33 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>请假表集合</h1>
+<div class="pure-g">
+{% for lv in lvs %}
+	
+<div class="pure-u-1-1">
+员工姓名:
+<input disabled="true"　readOnly="true" size="4" type="text" value="{{ lv.name }}">
+所属部门:
+<input disabled="true"　readOnly="true"  size="4" type="text" value="{{ lv.department }}">
+工作岗位:
+<input disabled="true"　readOnly="true"  size="4" type="text" value="{{ lv.job }}">
+<br>
+请假时间:
+从<input disabled="true"　readOnly="true" size="4" type="date" value="{{ lv.time1 }}">
+到			
+<input disabled="true"　readOnly="true"  size="4"type="date" value="{{ lv.time2 }}">
+
+请假类型
+<input disabled="true"　readOnly="true" size="2" type="text" value="{{ lv.genre }}"><br>		
+
+
+请假事由:
+<input disabled="true"　readOnly="true" type="text" style="" value="{{ lv.reason }}"><br>
+<br>
+</div>
+{% endfor %}		
+</div>
+{% endblock %}
